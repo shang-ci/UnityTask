@@ -13,6 +13,5 @@ public class RoomDataSO : ScriptableObject{
     public AssetReference sceneToLoad;
 
 
-
 }
 

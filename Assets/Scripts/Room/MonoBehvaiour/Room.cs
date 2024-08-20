@@ -6,24 +6,28 @@ public class Room : MonoBehaviour
 
     public int line;
 
-
     private SpriteRenderer spriteRenderer;
 
     public RoomDataSO roomData;
 
     public RoomState roomState;
 
+    [Header("广播")]
+    public ObjectEventSO loadRoomEvent;
+
     private void Awake(){
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start(){
-        SetupRoom(column:0, line:0, roomData);
+        SetupRoom(0, 0, roomData);
     }
 
     private void OnMouseDown(){
         //处理点击事件
         Debug.Log("点击了房间：" + roomData.roomType);
+
+        loadRoomEvent.RaiseEvent(roomData,this);
     }
 
     //外部创建房间时调用配置房间

@@ -2,7 +2,8 @@ using System;
 
 [Flags]
 public enum RoomType{
-    MinoEnemy = 1,
+    //按照2的次方
+    MinorEnemy = 1,
 
     EliteEnemy = 2,
 
