@@ -24,4 +24,11 @@ public enum RoomState{
     Attainable
 }
 
+public enum CardType{
+    Attack,
+
+    Defence,
+
+    Abilities
+}
 
