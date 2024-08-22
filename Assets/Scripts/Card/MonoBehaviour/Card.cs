@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 
-public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("组件")]
 
@@ -21,6 +21,8 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public int originalLayoutOrder;
 
     public bool isAnimating;
+
+    public Player player;
 
     private void Start()
     {
@@ -46,9 +48,12 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
             CardType.Abilities => "能力",
             _ => throw new System.NotImplementedException(),
         };
+
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
-    public void UpdatePositionRotation(Vector3 position,Quaternion rotation){
+    public void UpdatePositionRotation(Vector3 position, Quaternion rotation)
+    {
         originalPosition = position;
 
         originalRoatation = rotation;
@@ -58,7 +63,7 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(isAnimating) return;
+        if (isAnimating) return;
 
         transform.position = originalPosition + Vector3.up;
 
@@ -66,18 +71,28 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 
         GetComponent<SortingGroup>().sortingOrder = 20;
     }
-    
+
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(isAnimating) return;
+        if (isAnimating) return;
 
-        RestCardTransform();    
+        RestCardTransform();
     }
 
-    public void RestCardTransform(){
-        transform.SetPositionAndRotation(originalPosition,originalRoatation);
+    public void RestCardTransform()
+    {
+        transform.SetPositionAndRotation(originalPosition, originalRoatation);
 
         GetComponent<SortingGroup>().sortingOrder = originalLayoutOrder;
     }
-    
+
+    public void ExecuteCardEffects(CharacterBase from, CharacterBase target)
+    {
+        //减少相应能量，通知回收卡牌
+        foreach (var effect in cardData.effects)
+        {
+            effect.Execute(from, target);
+        }
+    }
+
 }

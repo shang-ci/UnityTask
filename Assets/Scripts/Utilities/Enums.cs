@@ -1,7 +1,8 @@
 using System;
 
 [Flags]
-public enum RoomType{
+public enum RoomType
+{
     //按照2的次方
     MinorEnemy = 1,
 
@@ -16,7 +17,8 @@ public enum RoomType{
     Boss = 32
 }
 
-public enum RoomState{
+public enum RoomState
+{
     Locked,
 
     Visited,
@@ -24,7 +26,8 @@ public enum RoomState{
     Attainable
 }
 
-public enum CardType{
+public enum CardType
+{
     Attack,
 
     Defence,
@@ -32,3 +35,11 @@ public enum CardType{
     Abilities
 }
 
+public enum EffectTargetType
+{
+    Self,
+
+    Target,
+
+    All
+}
