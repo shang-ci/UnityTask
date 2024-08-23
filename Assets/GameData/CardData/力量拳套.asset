@@ -15,5 +15,7 @@ MonoBehaviour:
   cardName: "\u529B\u91CF\u62F3\u5957"
   cardImage: {fileID: 21300000, guid: ab2c0effa4522104dbdb381ab0b16a7b, type: 3}
   cost: 2
-  cardType: 0
+  cardType: 2
   description: "\u589E\u52A0\u4F24\u5BB3<color=\"green\">50%</color>"
+  effects:
+  - {fileID: 11400000, guid: 8fe8a8ed8cc600e4598063215857202c, type: 2}

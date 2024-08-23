@@ -18,6 +18,6 @@ public class IntVariable : ScriptableObject
     {
         currentValue = value;
 
-        ValueChangeEvent.RaiseEvent(value, this);
+        ValueChangeEvent?.RaiseEvent(value, this);
     }
 }

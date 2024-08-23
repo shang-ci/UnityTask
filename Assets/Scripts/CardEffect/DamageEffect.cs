@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 [CreateAssetMenu(fileName = "DamageEffect", menuName = "Card Effect/DamageEffect")]
 
 public class DamageEffect : Effect
@@ -13,6 +12,7 @@ public class DamageEffect : Effect
         {
             case EffectTargetType.Target:
                 target.TakeDamage(value);
+                Debug.Log($"执行了{value}点伤害！");
                 break;
             case EffectTargetType.All:
                 foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))

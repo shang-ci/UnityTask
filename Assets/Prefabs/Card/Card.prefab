@@ -204,6 +204,9 @@ MonoBehaviour:
   originalRoatation: {x: 0, y: 0, z: 0, w: 0}
   originalLayoutOrder: 0
   isAnimating: 0
+  player: {fileID: 0}
+  discardCardEvent: {fileID: 11400000, guid: 14171673bdc95684b8b7f8982fd4aba8, type: 2}
+  costEvent: {fileID: 11400000, guid: 072a362c6aaac4c42be5e4b95df0bff8, type: 2}
 --- !u!114 &1252253537651265625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 9218777101563274150, guid: 0588535f45a56d04293ecfe30bb56e2e, type: 3}
-  currentArrow: {fileID: 0}
 --- !u!1 &1268169031092212941
 GameObject:
   m_ObjectHideFlags: 0
