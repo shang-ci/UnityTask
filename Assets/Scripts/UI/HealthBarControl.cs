@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -25,6 +26,12 @@ public class HealthBarControl : MonoBehaviour
     public Sprite buffSprite;
 
     public Sprite debuffSprite;
+
+    private Enemy enemy;
+
+    private VisualElement intentSprite;
+
+    private Label intentAmount;
 
 
 
@@ -67,6 +74,12 @@ public class HealthBarControl : MonoBehaviour
         buffRound = buffElements.Q<Label>("BuffRound");
 
         buffElements.style.display = DisplayStyle.None;
+
+        intentSprite = healthBar.Q<VisualElement>("Intent");
+
+        intentAmount = healthBar.Q<Label>("IntentAmount");
+
+        intentSprite.style.display = DisplayStyle.None;
     }
 
     private void Update()
@@ -122,5 +135,22 @@ public class HealthBarControl : MonoBehaviour
 
             buffElements.style.backgroundImage = currentCharacter.baseStrength > 1 ? new StyleBackground(buffSprite) : new StyleBackground(debuffSprite);
         }
+    }
+
+    //在玩家回合开始时
+    public void SetIntentElement()
+    {
+        intentSprite.style.display = DisplayStyle.Flex;
+
+        intentSprite.style.backgroundImage = new StyleBackground(enemy.currentAction.intentSprite);
+
+        //判断是否是攻击
+        var value = enemy.currentAction.effect.value;
+
+        if (enemy.currentAction.effect.GetType() == typeof(DamageEffect))
+        {
+            value = (int)math.round(enemy.currentAction.effect.value * enemy.baseStrength);
+        }
+        intentAmount.text = value.ToString();
     }
 }
