@@ -20,7 +20,7 @@ public class SceneLoadManager : MonoBehaviour
 
     public ObjectEventSO updateRoomEvent;
 
-    private void Start()
+    private void Awake()
     {
         currentRoomVector = Vector2Int.one * -1;
 
