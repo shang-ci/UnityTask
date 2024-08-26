@@ -9,20 +9,33 @@ public class SceneLoadManager : MonoBehaviour
 
     public AssetReference map;
 
+    public AssetReference menu;
+
     private Vector2Int currentRoomVector;
+
+    private Room currentRoom;
 
     [Header("广播")]
     public ObjectEventSO afterRoomLoadedEvent;
+
+    public ObjectEventSO updateRoomEvent;
+
+    private void Start()
+    {
+        currentRoomVector = Vector2Int.one * -1;
+
+        LoadMenu();
+    }
 
     public async void OnLoadRoomEvent(object data)
     {
         if (data is Room)
         {
-            Room currentRoom = data as Room;
+            currentRoom = data as Room;
 
             var currentData = currentRoom.roomData;
 
-            currentRoomVector = new(currentRoom.column,currentRoom.line);
+            currentRoomVector = new(currentRoom.column, currentRoom.line);
 
             currentScene = currentData.sceneToLoad;
         }
@@ -31,7 +44,7 @@ public class SceneLoadManager : MonoBehaviour
         //加载房间
         await LoadSceneTask();
 
-        afterRoomLoadedEvent.RaiseEvent(currentRoomVector,this);
+        afterRoomLoadedEvent.RaiseEvent(currentRoom, this);
     }
 
     private async Awaitable LoadSceneTask()
@@ -51,10 +64,26 @@ public class SceneLoadManager : MonoBehaviour
         await SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
-    public async void LoadMap(){
+    public async void LoadMap()
+    {
         await UnloadSceneTask();
 
+        if (currentRoomVector != Vector2.one * -1)
+        {
+            updateRoomEvent.RaiseEvent(currentRoomVector, this);
+        }
+
         currentScene = map;
+
+        await LoadSceneTask();
+    }
+
+    public async void LoadMenu()
+    {
+        if (currentScene != null)
+            await UnloadSceneTask();
+
+        currentScene = menu;
 
         await LoadSceneTask();
     }

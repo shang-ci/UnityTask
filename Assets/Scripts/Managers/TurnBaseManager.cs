@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TurnBaseManager : MonoBehaviour
 {
+    public GameObject playerObj;
+
     private bool isPlayerTurn = false;
 
     private bool isEnemyTurn = false;
@@ -89,4 +91,38 @@ public class TurnBaseManager : MonoBehaviour
         enemyTurnEnd.RaiseEvent(null, this);
     }
 
+    //注册时间函数 after room load
+    public void OnRoomLoadEvent(object obj)
+    {
+        Room room = obj as Room;
+
+        switch (room.roomData.roomType)
+        {
+            case RoomType.MinorEnemy:
+            case RoomType.EliteEnemy:
+            case RoomType.Boss:
+                playerObj.SetActive(true);
+                GameStart();
+                break;
+            case RoomType.Shop:
+            case RoomType.Treasure:
+                playerObj.SetActive(false);
+                break;
+            case RoomType.RestRoom:
+                playerObj.SetActive(true);
+                break;
+        }
+    }
+
+    public void StopTurnBaseSystem(object obj)
+    {
+        battleEnd = true;
+
+        playerObj.SetActive(false);
+    }
+
+    public void NewGame()
+    {
+        playerObj.GetComponent<Player>().NewGame();
+    }
 }

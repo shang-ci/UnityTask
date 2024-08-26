@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6b491bfc1b8b2458dc9b937c1b26a2, type: 3}
   m_Name: AfterRoomLoadEvent
   m_EditorClassIdentifier: 
-  description: "\u623F\u95F4\u8FDB\u5165\u540E\u7684\u4E8B\u4EF6\uFF0C\u4F20\u9012Vector2Int\u6765\u66F4\u65B0\u623F\u95F4\u72B6\u6001"
-  lastSender: 
+  description: "\u623F\u95F4\u8FDB\u5165\u540E\u7684\u4E8B\u4EF6"
+  lastSender: SceneLoadManager (SceneLoadManager)

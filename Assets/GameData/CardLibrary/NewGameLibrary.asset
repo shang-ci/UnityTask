@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardLibraryList:
   - cardData: {fileID: 11400000, guid: 639ebf16933a35148a0902db28d9b174, type: 2}
-    amount: 3
+    amount: 1
   - cardData: {fileID: 11400000, guid: ff4b63d953f428547b83638fa332c6b0, type: 2}
     amount: 1
   - cardData: {fileID: 11400000, guid: 006ece1d57674174685271a4ff2af5ab, type: 2}
-    amount: 2
+    amount: 1
   - cardData: {fileID: 11400000, guid: 0ddbd8fa973bbf744b0d45f743b8da3d, type: 2}
-    amount: 3
+    amount: 1
   - cardData: {fileID: 11400000, guid: 54676cf074c5243428dcbec568e105df, type: 2}
     amount: 1

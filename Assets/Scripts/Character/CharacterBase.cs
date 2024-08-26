@@ -29,6 +29,9 @@ public class CharacterBase : MonoBehaviour
 
     private float strengthEffect = 0.5f;
 
+    [Header("广播")]
+    public ObjectEventSO characterDeadEvent;
+
     protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -45,6 +48,11 @@ public class CharacterBase : MonoBehaviour
         ResetDefence();
     }
 
+    protected virtual void Update()
+    {
+        animator.SetBool("isDead", isDead);
+    }
+
     public virtual void TakeDamage(int damage)
     {
         var currentDamage = (damage - defence.currentValue) >= 0 ? (damage - defence.currentValue) : 0;
@@ -58,6 +66,8 @@ public class CharacterBase : MonoBehaviour
             CurrentHP -= currentDamage;
 
             //Debug.Log("CurrentHP:" + CurrentHP);
+
+            animator.SetTrigger("hit");
         }
         else
         {
@@ -65,6 +75,8 @@ public class CharacterBase : MonoBehaviour
 
             //当前人物死亡
             isDead = true;
+
+            characterDeadEvent.RaiseEvent(this, this);
         }
     }
 

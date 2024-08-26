@@ -175,4 +175,16 @@ public class CardDeck : MonoBehaviour
 
         discardCountEvent.RaiseEvent(discardDeck.Count, this);
     }
+
+    public void ReleaseAllCards(object obj)
+    {
+        foreach (var card in handCardObjectList)
+        {
+            cardManager.DiscardCard(card.gameObject);
+        }
+
+        handCardObjectList.Clear();
+
+        InitializeDeck();
+    }
 }

@@ -38,9 +38,11 @@ public class HealthBarControl : MonoBehaviour
     private void Awake()
     {
         currentCharacter = GetComponent<CharacterBase>();
+        
+        enemy = GetComponent<Enemy>(); 
     }
 
-    private void Start()
+    private void OnEnable()
     {
         InitHealthBar();
     }
@@ -77,7 +79,7 @@ public class HealthBarControl : MonoBehaviour
 
         intentSprite = healthBar.Q<VisualElement>("Intent");
 
-        intentAmount = healthBar.Q<Label>("IntentAmount");
+        intentAmount = healthBar.Q<Label>("IntendAmount");
 
         intentSprite.style.display = DisplayStyle.None;
     }
@@ -152,5 +154,11 @@ public class HealthBarControl : MonoBehaviour
             value = (int)math.round(enemy.currentAction.effect.value * enemy.baseStrength);
         }
         intentAmount.text = value.ToString();
+    }
+
+    //敌人回合结束后
+    public void HideIntentElement()
+    {
+        intentSprite.style.display = DisplayStyle.None;
     }
 }
