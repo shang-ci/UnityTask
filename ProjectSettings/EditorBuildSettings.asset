@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Boot.unity
+    guid: 50e3b185e76c3e34d8a55f902d944a88
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/EliteEnemy.unity
+    guid: 79b03b1cff83b3e44bd78c953b395f48
+  - enabled: 0
+    path: Assets/Scenes/MinorEnemy.unity
+    guid: 08086c63c5668fa4888be56562e8543f
+  - enabled: 0
+    path: Assets/Scenes/Boss.unity
+    guid: 5704a56edbbc5514ab27c3f225dcc8e7
+  - enabled: 0
+    path: Assets/Scenes/Persistent.unity
+    guid: 9222fab1c8af4464582a0af87ce36ff8
+  - enabled: 0
+    path: Assets/Scenes/RestRoom.unity
+    guid: 818c9c86cb01be846b288f78b358508b
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: ae08525800ec8c8459711464416d16e4, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: f8325857dc4dc464d843ff9197ee52b7, type: 2}

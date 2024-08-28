@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a77c39f42b729408a04ce3258e52f9, type: 3}
-  m_Name: NewGameLibrary
+  m_Script: {fileID: 11500000, guid: 9d594005df199cf418d4102a3eb45052, type: 3}
+  m_Name: SelfStrength2
   m_EditorClassIdentifier: 
-  cardLibraryList:
-  - cardData: {fileID: 11400000, guid: 639ebf16933a35148a0902db28d9b174, type: 2}
-    amount: 5
+  value: 4
+  targetType: 0

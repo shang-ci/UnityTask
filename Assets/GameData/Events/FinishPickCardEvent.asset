@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a77c39f42b729408a04ce3258e52f9, type: 3}
-  m_Name: NewGameLibrary
+  m_Script: {fileID: 11500000, guid: 5e6b491bfc1b8b2458dc9b937c1b26a2, type: 3}
+  m_Name: FinishPickCardEvent
   m_EditorClassIdentifier: 
-  cardLibraryList:
-  - cardData: {fileID: 11400000, guid: 639ebf16933a35148a0902db28d9b174, type: 2}
-    amount: 5
+  description: 
+  lastSender: 

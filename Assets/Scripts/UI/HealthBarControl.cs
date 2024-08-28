@@ -22,7 +22,7 @@ public class HealthBarControl : MonoBehaviour
 
     private Label buffRound;
 
-    [Header("buff ssprite")]
+    [Header("buff sprite")]
     public Sprite buffSprite;
 
     public Sprite debuffSprite;

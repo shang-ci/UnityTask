@@ -180,7 +180,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5.8862724
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -787,7 +787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb35c86bbf34e845a3b124c1429b539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardTempLate: {fileID: 0}
+  cardManager: {fileID: 1958042601}
+  cardTempLate: {fileID: 9197481963319205126, guid: e3effb519e718c145a6b19536326ac3e, type: 3}
+  finishPickCardEvent: {fileID: 11400000, guid: 69003af671b0d0c47a78d0bea5c12a45, type: 2}
 --- !u!1 &677426516
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +832,7 @@ GameObject:
   - component: {fileID: 686486526}
   - component: {fileID: 686486525}
   - component: {fileID: 686486524}
+  - component: {fileID: 686486527}
   m_Layer: 0
   m_Name: GameWinPanel
   m_TagString: Untagged
@@ -885,6 +888,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686486527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686486523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3526bacddbe783546b661071d04f69ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: 69003af671b0d0c47a78d0bea5c12a45, type: 2}
+  reponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 686486524}
+        m_TargetAssemblyTypeName: GameWinPanel, Assembly-CSharp
+        m_MethodName: OnFinishPickCardEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1045162160
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1015,72 @@ Transform:
   - {fileID: 1867037106}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1248549481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248549483}
+  - component: {fileID: 1248549482}
+  - component: {fileID: 1248549484}
+  m_Layer: 0
+  m_Name: RestRoomPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1248549482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248549481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 9c46a540aa4b3f54a8a97a22f426604c, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 83514d089e49fd84e84e5de2b4e4e3a0, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!4 &1248549483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248549481}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248549484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248549481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b49e37f5629a8245a2d734c2daa1ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restEffect: {fileID: 11400000, guid: 87f719e489db9924e9ddf7654ec43e85, type: 2}
+  loadMapEvent: {fileID: 11400000, guid: ce19c91c626dcb34199447ab87f3d9d7, type: 2}
 --- !u!1 &1275972403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,6 +1269,7 @@ GameObject:
   - component: {fileID: 1481166570}
   - component: {fileID: 1481166574}
   - component: {fileID: 1481166575}
+  - component: {fileID: 1481166576}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1195,6 +1293,7 @@ MonoBehaviour:
   gameWinPanel: {fileID: 686486523}
   gameOverPanel: {fileID: 292431313}
   pickCardPanel: {fileID: 597306197}
+  restRoomPanel: {fileID: 1248549481}
 --- !u!4 &1481166569
 Transform:
   m_ObjectHideFlags: 0
@@ -1378,6 +1477,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1481166576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481166567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3526bacddbe783546b661071d04f69ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: 69003af671b0d0c47a78d0bea5c12a45, type: 2}
+  reponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1481166568}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnFinishPickCardEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1499834083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,8 +1534,8 @@ Transform:
   m_GameObject: {fileID: 1499834083}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.21, y: -3.54, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -5.34, y: -5.52, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1990918788}
@@ -1517,8 +1644,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1874213349
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1499834088
@@ -2363,9 +2490,9 @@ Transform:
   m_GameObject: {fileID: 1990918787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.12, y: 1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1499834084}
   - {fileID: 677426517}
@@ -2597,3 +2724,4 @@ SceneRoots:
   - {fileID: 597306199}
   - {fileID: 1795104919}
   - {fileID: 292431316}
+  - {fileID: 1248549483}

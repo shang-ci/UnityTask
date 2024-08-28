@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
         var roomVector = (Vector2Int)value;
 
-        if(mapLayout.mapRoomDataList.Count == 0)
+        if (mapLayout.mapRoomDataList.Count == 0)
             return;
 
         var currentRoom = mapLayout.mapRoomDataList.Find(r => r.column == roomVector.x && r.line == roomVector.y);
@@ -64,7 +64,11 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EventDelayAction(gameOverEvent));
         }
 
-        if (character is Enemy)
+        if (character is Boss)
+        {
+            StartCoroutine(EventDelayAction(gameOverEvent));
+        }
+        else if (character is Enemy)
         {
             aliveEnemyList.Remove(character as Enemy);
 
@@ -74,6 +78,8 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(EventDelayAction(gameWinEvent));
             }
         }
+
+
     }
 
     IEnumerator EventDelayAction(ObjectEventSO eventSO)

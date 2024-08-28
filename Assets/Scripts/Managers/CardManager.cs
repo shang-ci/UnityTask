@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -15,6 +15,10 @@ public class CardManager : MonoBehaviour
     public CardLibrarySO newGameCardLibrary;
 
     public CardLibrarySO currentLibrary;
+
+
+
+    private int previousIndex;
 
     private void Awake()
     {
@@ -65,5 +69,40 @@ public class CardManager : MonoBehaviour
     public void DiscardCard(GameObject cardObj)
     {
         poolTool.ReturnObjectToPool(cardObj);
+    }
+
+    public CardDataSO GetNewCardData()
+    {
+        var randomIndex = 0;
+
+        do
+        {
+            randomIndex = Random.Range(0, cardDataList.Count);
+        } while (previousIndex == randomIndex);
+
+        previousIndex = randomIndex;
+
+        return cardDataList[randomIndex];
+    }
+
+    //解锁添加新卡牌
+    public void UnlockCard(CardDataSO newCardData)
+    {
+        var newCard = new CardLibraryEntry
+        {
+            cardData = newCardData,
+            amount = 1,
+        };
+
+        if (currentLibrary.cardLibraryList.Contains(newCard))
+        {
+            var target = currentLibrary.cardLibraryList.Find(t => t.cardData == newCardData);
+
+            target.amount++;
+        }
+        else
+        {
+            currentLibrary.cardLibraryList.Add(newCard);
+        }
     }
 }

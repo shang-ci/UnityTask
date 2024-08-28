@@ -55,8 +55,10 @@ public class PlayerAnimation : MonoBehaviour
                 animator.SetTrigger("skill");
                 break;
         }
-
-
     }
 
+    public void SetSleepAnimation()
+    {
+        animator.Play("death");
+    }
 }

@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 369179340}
   - component: {fileID: 369179341}
   - component: {fileID: 369179342}
+  - component: {fileID: 369179343}
   m_Layer: 7
   m_Name: MinorEnemy
   m_TagString: Enemy
@@ -412,6 +413,34 @@ MonoBehaviour:
       - m_Target: {fileID: 369179336}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: OnEnemyTurnBegin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &369179343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369179332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3526bacddbe783546b661071d04f69ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSO: {fileID: 11400000, guid: 8f3e2f0fc48b8f6479c41fb645779218, type: 2}
+  reponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 369179337}
+        m_TargetAssemblyTypeName: HealthBarControl, Assembly-CSharp
+        m_MethodName: InitHealthBar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
