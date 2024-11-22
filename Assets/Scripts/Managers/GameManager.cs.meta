@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 39d42db896eac86429051136bfd8657a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mapLayout: {fileID: 11400000, guid: 5813be13b1ffb5342851885c37ab3f9e, type: 2}
+  - gameWinEvent: {fileID: 11400000, guid: a08aa91f181172a47b4bf019b3fbe2c5, type: 2}
+  - gameOverEvent: {fileID: 11400000, guid: 5703e3f4bddc17c4bad4325a3653071d, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

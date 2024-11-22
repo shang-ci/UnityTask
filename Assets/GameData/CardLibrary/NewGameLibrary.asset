@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NewGameLibrary
   m_EditorClassIdentifier: 
   cardLibraryList:
-  - cardData: {fileID: 11400000, guid: 639ebf16933a35148a0902db28d9b174, type: 2}
-    amount: 5
+  - cardData: {fileID: 11400000, guid: ff4b63d953f428547b83638fa332c6b0, type: 2}
+    amount: 10

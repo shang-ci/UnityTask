@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 950e0b4ee4b1cc246b4bdf223bf7d943
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - poolTool: {instanceID: 0}
+  - newGameCardLibrary: {fileID: 11400000, guid: 1d4f6118516ee1940b427d6359e4358a, type: 2}
+  - currentLibrary: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 2a532fe36326b6247923b8b4a3d0ea70
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerObj: {instanceID: 0}
+  - playerTurnBegin: {fileID: 11400000, guid: 570728f3481739549996c92c0f22f963, type: 2}
+  - enemyTurnBegin: {fileID: 11400000, guid: 8d2e4c0a09ff5ec4aaefce183e03f8f9, type: 2}
+  - enemyTurnEnd: {fileID: 11400000, guid: ff6987bc5eb1f88488ef4fbd01bd3ed9, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
